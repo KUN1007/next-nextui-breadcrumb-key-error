@@ -6,9 +6,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "framer-motion": "^11.13.1",
     "next": "latest",
+    "next-themes": "^0.4.3",
+    "postcss": "^8.4.49",
+    "postcss-html": "^1.7.0",
+    "postcss-import": "^16.1.0",
+    "postcss-scss": "^4.0.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.16"
   },
   "devDependencies": {
     "@types/node": "20.8.10",
