@@ -9,20 +9,23 @@ import {
   DropdownItem,
   Button,
 } from '@nextui-org/react'
+import { useRouter } from 'next/navigation'
 
 export default function App() {
+  const router = useRouter()
+
   return (
     <Breadcrumbs
-      maxItems={3}
-      itemsBeforeCollapse={1}
-      itemsAfterCollapse={2}
+      // maxItems={3}
+      // itemsBeforeCollapse={1}
+      // itemsAfterCollapse={2}
       renderEllipsis={({ items, ellipsisIcon, separator }) => (
-        <div className="flex items-center">
+        <div key="id" className="flex items-center">
           <Dropdown>
             <DropdownTrigger>
               <Button
                 isIconOnly
-                className="min-w-6 w-6 h-6"
+                className="w-6 h-6 min-w-6"
                 size="sm"
                 variant="flat"
               >
@@ -41,12 +44,18 @@ export default function App() {
         </div>
       )}
     >
-      <BreadcrumbItem href="#home">Home</BreadcrumbItem>
-      <BreadcrumbItem href="#music">Music</BreadcrumbItem>
+      <BreadcrumbItem
+        href="/test"
+        onClick={(event) => event.preventDefault()}
+        onPress={() => router.push('/test')}
+      >
+        Test
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/example">example</BreadcrumbItem>
       <BreadcrumbItem href="#artist">Artist</BreadcrumbItem>
-      <BreadcrumbItem href="#album">Album</BreadcrumbItem>
+      {/* <BreadcrumbItem href="#album">Album</BreadcrumbItem>
       <BreadcrumbItem href="#featured">Featured</BreadcrumbItem>
-      <BreadcrumbItem href="#song">Song</BreadcrumbItem>
+      <BreadcrumbItem href="#song">Song</BreadcrumbItem> */}
     </Breadcrumbs>
   )
 }
